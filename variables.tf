@@ -1,18 +1,17 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
-variable "region" {
-  description = "AWS region"
-  default     = "us-west-1"
+variable "resource_group_location" {
+  type        = string
+  default     = "eastus"
+  description = "Location of the resource group."
 }
 
-variable "instance_type" {
-  description = "Type of EC2 instance to provision"
-  default     = "t2.micro"
+variable "resource_group_name_prefix" {
+  type        = string
+  default     = "rg"
+  description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
 }
 
-variable "instance_name" {
-  description = "EC2 instance name"
-  default     = "Provisioned by Terraform"
+variable "username" {
+  type        = string
+  description = "The username for the local account that will be created on the new VM."
+  default     = "azureadmin"
 }
-
